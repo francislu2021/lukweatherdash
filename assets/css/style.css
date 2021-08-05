@@ -212,6 +212,8 @@ color: white;
   }
 
   #map {
+      margin-top: 40px;
       height:300px;
       width: 300px;
+      box-shadow: grey 3px 3px 3px 0;
   }
