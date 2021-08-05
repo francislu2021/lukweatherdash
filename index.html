@@ -7,16 +7,124 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Global Weather Dashboard</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/css/style.css">
+        <!--google map-->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- Font CSS Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+<!--Jumbotron Title-->
+<div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#404040 ;color: white;">
+    <h1> <strong>Global Weather Dashboard</strong></h1>
+    </div>
+
+    <!--real time display flex box section-->
+    <div class=flex-timedis>
+        <div id="time">1:20PM</div>
+        <div id="day">SUN</div>
+        <div id="date">9 May 2021</div>
+    </div>
+
+    <!--side search bar, side menu section-->
+    <div class="row">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
+            <div class="input-group-append">
+                <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
+            </div>
+
+    <ul id="myMenu">Quick Search
+    </ul>
+
+    <button id="locationbtn" onclick="getLocation()">Find my location</button>
+       <div><p id="demo"></p></div>
+
+       <input
+        id="pac-input"
+        class="controls"
+        type="text"
+        placeholder="Search Box"
+      />
+      <div id="map"></div>
+    </div>
+
+
+  <!--right side content area-->
+  <div class="right" style="background-color:rgb(227, 238, 240);">
+  <h2 id="righth2">Weather Conditions</h2>
+
+  <!--weather data-->
+  <div class="col-sm-8">
+    <div class="row ml-2 border border-dark rounded">
+        <div class="col-sm-12" id="current-weather">
+            <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+            <p>Temperature:<span class="current" id="temperature"></span></p>
+            <p>Humidity:<span class="current" id="humidity"></span></p> 
+            <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+            <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
+        </div>
+    </div>
+
+
+<!--Row for weather data-->
+<div class="col-sm-12" id ="future-weather">
+    <h3>5-Day Forecast:</h3>
+    <div class="row text-light">
+        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+            <p id="fDate0"></p>
+            <p id="fImg0"></p>
+            <p>Temp:<span id="fTemp0"></span></p>
+            <p>Humidity:<span id="fHumidity0"></span></p>
+        </div>
+        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+            <p id="fDate1"></p>
+            <p id="fImg1"></p>
+            <p>Temp:<span id="fTemp1"></span></p>
+            <p>Humidity:<span id="fHumidity1"></span></p>
+        </div>
+        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+            <p id="fDate2"></p>
+            <p id="fImg2"></p>
+            <p>Temp:<span id="fTemp2"></span></p>
+            <p>Humidity:<span id="fHumidity2"></span></p>
+        </div>
+        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+            <p id="fDate3"></p>
+            <p id="fImg3"></p>
+            <p>Temp:<span id="fTemp3"></span></p>
+            <p>Humidity:<span id="fHumidity3"></span></p>
+        </div>
+        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+            <p id="fDate4"></p>
+            <p id="fImg4"></p>
+            <p>Temp:<span id="fTemp4"></span></p>
+            <p>Humidity:<span id="fHumidity4"></span></p>
+        </div>
+
+
         
+
+
+
+
+  </div>
+  </div>
+   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+   <script
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTAhdEGFgHhbbmtApHcGHmOB2qDTfbCp4&callback=initAutocomplete&libraries=places&v=weekly"
+   async
+ ></script>
+  <!--CDN jQuery JS-->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/js/index.js" async defer></script>
     </body>
 </html>
