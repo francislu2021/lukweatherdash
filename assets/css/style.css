@@ -212,8 +212,22 @@ color: white;
   }
 
   #map {
-      margin-top: 40px;
+      margin-top: 50px;
       height:300px;
       width: 300px;
       box-shadow: grey 3px 3px 3px 0;
   }
+
+  /*flex-container to display 5 day weather forecast*/
+  .flex-container-weather {
+      display:flex;
+      
+  }
+   
+  .flex-container-weather > div {
+    margin:30px;
+    padding: 40px;
+    font-size: 15px;
+    background-color: rgb(236, 231, 159);
+  }
+
