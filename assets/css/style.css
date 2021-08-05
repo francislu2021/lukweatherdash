@@ -210,3 +210,8 @@ color: white;
   #target {
     width: 345px;
   }
+
+  #map {
+      height:150px;
+      width: 300px;
+  }
